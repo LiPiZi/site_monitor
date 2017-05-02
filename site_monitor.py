@@ -25,8 +25,6 @@ def main():
 		else:
 			l1 = str(soup1).split(' ')
 			l2 = str(soup2).split(' ')
-			d = difflib.Differ();
-			dif = list(d.compare(l1, l2));
-			print(" ".join(['<b>'+i[2:]+'</b>' if i[:1] == '+' else i[2:] for i in dif if not i[:1] in '-?']))
+			" ".join(l1.rsplit(l2))
 if __name__ == "__main__":
 	main()
