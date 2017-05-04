@@ -10,8 +10,7 @@ def bodyonly(code):
 	soup = BeautifulSoup(code, "html.parser")
 	body = soup.find('body')
 	contents = body.findChildren()
-	webContent = contents
-	return webContent
+	return contents
 def main():
 	while True:
 		r1  = requests.get(url)
@@ -31,6 +30,7 @@ def main():
 		if soup1 == soup2:
 			print("No change")
 		else:
+			#show changes in line
 			l1 = str(soup1).lower().split()
 			l2 = str(soup2).lower().split()
 			s1 = ""
@@ -41,7 +41,6 @@ def main():
 			for j in l2:
 			  if j not in l1:
 				s2 = s2 + " " + j 
-
 			new = s1 + " " + s2
 			print new
 if __name__ == "__main__":
